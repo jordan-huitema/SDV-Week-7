@@ -39,43 +39,58 @@ arr2.test2 = 'nark'                                     //this does the same but
 console.log(arr2)
 console.log(arr2.test)
 
-//'.slice' returns the index's between the first parameter and the second, if there is no second parameter it will return every index after the first parameter  
+//'.slice()' returns the index's between the first parameter and the second, if there is no second parameter it will return every index after the first parameter  
 console.log(arr.slice(1,4))                             //returns index 1,2,3
 console.log(arr.slice(1))                               //returns index 1 and all proceding index's
 console.log(arr)                                        //does not alter arr
 
-//'.concat' clones and adds its parameters to the end of and array
-let mergeArr = arr.concat(arr1)
-console.log(mergeArr)
+//'.concat()' clones and adds its parameters to the end of and array
+console.log(arr.concat(arr1))                           //added contents of arr1 array to the end of arr array
 
-let = names = ['Ali', 'Aron', 'Dale', 'Asti']
-console.log(names.pop())
+//'.pop()' removes and outputs the last index of an array, simmilar to cut and paste in a filemanager 
+let names = ['Ali', 'Aron', 'Dale', 'Asti']       
 
-console.log(names.push('Jordan'))
+console.log(names.pop())                                //removed 'asti' from the names array
 console.log(names)
 
-names.forEach(name => console.log(name))
-
-console.log(names.shift())
+//'.push()' adds a parameter as a index to the end of an array
+console.log(names.push('Jordan'))                       //pushed 'Jordan' to the end of the names array
 console.log(names)
 
-console.log(names.unshift('Ali'))
+//'.forEach()' will run a function for each index of an array 
+names.forEach(x => {console.log(x)})                    //run es6 function printing index to log for each index
+
+//'.shift()' removes and outputs the first index of an array, simmilar to cut and paste in a filemanager
+console.log(names.shift())                              //removed first index of names array
 console.log(names)
 
-console.log(names.reverse())
+//'.unshift()' adds a parameter as an index to the front of an array
+console.log(names.unshift('Ali'))                       //added 'Ali' to front of names array
+console.log(names)
 
-console.log(names.indexOf('Dale'))
+//'.reverse()' flips an array eg 1,2,3 becomes 3,2,1
+console.log(names.reverse())                            //flipped names array
 
-console.log(names.join())
-console.log(names.join('-duuhhh-'))
+//'.indexOf()' finds an index with the same value as the prameter and outputs the index of that element
+console.log(names.indexOf('Dale'))                      //'Dale' is the second element in the names array so output index 1 
 
-//map
-arr = [1,2,3,4,5]
-console.log(arr.map(Math.round))
-console.log(arr.map(x => x * 2))
+//'join()' outputs an array as a string, by default it will put a comma between the index's but you can change that by placing a string in the parameter
+console.log(names.join())                               //prints names array as string with commas
+console.log(names.join('-duuhhh-'))                     //prints names array as string with -duuuuuh- inbetween index's
 
-//reduce
-console.log(arr.reduce(x => x + 1))                 //this adds 1 to each element of the array and then adds them all together
+//'.map()' runs a function for each index of an array and outputs the modified array
+arr = [1.5,2.1,3.6,4.8,5.2]
+console.log(arr.map(Math.round))                        //rounding each index of the arr array
+console.log(arr.map(x => x * 2))                        //multiplying each index of the arr array by 2 with a es6 function 
+
+//'.reduce()' runs each index of an array through 1 continuous function with designated arguments and has 1 output
+// Accumulator      (acc)   persistant counter
+// Current Value    (cur)   the value of the selected index
+// Current Index    (idx)   
+// Source Array     (src)   the selected array
+
+console.log(arr)
+console.log(arr.reduce((acc, cur) => acc+cur))          //this adds each index of the array to the accumulator and outputs the final value
 
 //splice                                            //splice allows you to insert an element into a array at a specified index with or without deleting any other index's
 arr.splice(2,0,42)                                  //this inserts '42' to the arr array at index 1 without deleting other index's
