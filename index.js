@@ -92,7 +92,7 @@ console.log(arr.map(x => x * 2))                        //multiplying each index
 console.log(arr)
 console.log(arr.reduce((acc, cur) => acc+cur))          //this adds each index of the array to the accumulator and outputs the final value
 
-//splice                                            //splice allows you to insert an element into a array at a specified index with or without deleting any other index's
+//'splice()' allows you to insert an element into a array at a specified index with or without deleting any other index's
 arr.splice(2,0,42)                                  //this inserts '42' to the arr array at index 1 without deleting other index's
 console.log(arr)
 arr.splice(2,1,24)                                  //this inserts '24' to the arr arrat at index 1 and removes the prior index 1
